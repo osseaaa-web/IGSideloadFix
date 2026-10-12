@@ -1,0 +1,36 @@
+﻿name: Build IGSideloadFix IPA
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: |
+          brew install ldid xz gzip
+
+      - name: Setup Theos
+        uses: Randomblock1/theos-action@v1
+
+      - name: Install theos-jailed
+        run: |
+          git clone https://github.com/joshuah345/theos-jailed.git $THEOS/vendor/theos-jailed
+
+      - name: Download Instagram IPA
+        run: |
+          curl -L -o Instagram.ipa "https://github.com/osseaaa-web/IGSideloadFix/releases/download/qweqwe/com.burbn.instagram_450.1.0_und3fined.ipa"
+
+      - name: Build IPA
+        run: make package FINALPACKAGE=1
+
+      - name: Upload IPA
+        uses: actions/upload-artifact@v4
+        with:
+          name: IGSideloadFix-IPA
+          path: packages/*.ipa

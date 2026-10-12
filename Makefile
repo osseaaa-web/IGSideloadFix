@@ -1,4 +1,4 @@
-export TROLLSTORE ?= 0
+﻿export TROLLSTORE ?= 0
 
 MODULES = jailed
 include $(THEOS)/makefiles/common.mk
@@ -17,7 +17,8 @@ Hackogram_FILES += SideloadedFixes.x
 endif
 
 # add your paths here
-Hackogram_IPA = $(IPA_PATH)/Instagram_250.0.ipa
-Hackogram_INJECT_DYLIBS = $(IPA_DYLIB_PATH)/Rocket.dylib
+Hackogram_IPA = Instagram.ipa
+Hackogram_INJECT_DYLIBS =
 
 include $(THEOS_MAKE_PATH)/tweak.mk
+
