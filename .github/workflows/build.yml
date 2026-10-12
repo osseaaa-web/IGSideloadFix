@@ -29,7 +29,7 @@ jobs:
           curl -L -o Instagram.ipa "https://github.com/osseaaa-web/IGSideloadFix/releases/download/qweqwe/com.burbn.instagram_450.1.0_und3fined.ipa"
 
       - name: Build IPA
-        run: make package FINALPACKAGE=1
+        run: make package FINALPACKAGE=1 CODESIGN_IPA=0
 
       - name: Upload IPA
         uses: actions/upload-artifact@v4
