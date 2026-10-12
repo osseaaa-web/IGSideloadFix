@@ -21,6 +21,8 @@ jobs:
       - name: Install theos-jailed
         run: |
           git clone https://github.com/opa334/theos-jailed.git $THEOS/vendor/jailed
+          cd /tmp/theos-jailed
+          ./install
 
       - name: Download Instagram IPA
         run: |
