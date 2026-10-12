@@ -5,7 +5,8 @@ include $(THEOS)/makefiles/common.mk
 
 TWEAK_NAME = Hackogram
 DISPLAY_NAME = Instagram
-
+TARGET = iphone:clang:latest:15.0
+ARCHS = arm64
 Hackogram_FILES = Init.x
 
 ifeq ($(TROLLSTORE),1)
