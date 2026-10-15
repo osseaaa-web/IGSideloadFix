@@ -27,7 +27,7 @@ jobs:
 
       - name: Download Instagram IPA
         run: |
-          curl -L -o Instagram.ipa "https://github.com/osseaaa-web/IGSideloadFix/releases/download/qweqwe/com.burbn.instagram_450.1.0_und3fined.ipa"
+          curl -L -o Instagram.ipa "https://github.com/osseaaa-web/IGSideloadFix/releases/download/qweqwe11/gram451.ipa"
 
       - name: Build IPA
         run: make package FINALPACKAGE=1 CODESIGN_IPA=0
